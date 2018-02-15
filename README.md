@@ -1,7 +1,7 @@
 
 [![Build Status](https://api.shippable.com/projects/55b129faedd7f2c0528139bc/badge?branchName=master)](https://app.shippable.com/projects/55b129faedd7f2c0528139bc/builds/latest)
 
-##Overview
+## Overview
 ---
 This repo produces a turn key VPN -> SOCKS5 tunnel to route you to the Internet. There could be many reasons why you might need a solution like this. Limitations of your current network restricting access, more security when traveling. Whatever the reason this build gives you a great turn key solution.
 
@@ -12,7 +12,7 @@ There are currently two builds to select:
 
 
 
-###Please Note:
+### Please Note:
 The Official SoftEther VPN is built using **CentOS 7** this is a working build using **Ubuntu**. There is a *current* limitation with Docker and building the image via automated tools, the volume devicemapper which [appears to be fixed](https://github.com/docker/docker/issues/6980) in Docker 1.6.2. After numerous attempts and configuration tweaks the building the image was not successful. I was able to change the Dockerfile to use **Ubuntu** as the underlaying OS. **Success!**
 
 
@@ -81,5 +81,5 @@ To review the system generated username and password, use `docker logs <containe
 
 ---
 
-##Patches / Feedback Welcome!
+## Patches / Feedback Welcome!
 [Send a message](https://github.com/htmlgraphic/VPN/issues/new)
