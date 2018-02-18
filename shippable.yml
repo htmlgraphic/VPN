@@ -1,11 +1,3 @@
-language: python
-
-branches:
-  only:
-  - master
-  - develop
-
-
 env:
   global:
     - PROXY_HOST=89.47.25.153
@@ -13,10 +5,27 @@ env:
     - LOCAL_IP=
     - no_proxy=localhost,127.0.0.1,localaddress,.localdomain.com
 
+build:
+  ci:
+    - make build
+  pre_ci_boot:
+    image_name: htmlgraphic/vpn
+    image_tag: latest
+    pull: false
+  post_ci:
+    - make push
 
-notifications:
-  email:
-    recipients:
-      - jason@htmlgraphic.com
-    on_success: change
-    on_failure: always
+integrations:
+  # using matrix builds multiple images so this is not ideal
+  # falling back to git repo build on docker hub
+  # hub:
+  #   - integrationName: "Docker Hub"
+  #     type: docker
+
+  notifications:
+    - integrationName: email
+      type: email
+      recipients:
+        - jason+github@htmlgraphic.com
+      on_success: change
+      on_failure: always
