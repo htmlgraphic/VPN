@@ -15,7 +15,7 @@ help:
 	@echo ""
 	@echo "     make build		- Build image $(IMAGE_NAME):$(VERSION)"
 	@echo "     make push		- Push $(IMAGE_NAME):$(VERSION) to public docker repo"
-	@echo "     make run		- Create a container for $(NAME)"
+	@echo "     make run		- Run docker-compose and create local development environment"
 	@echo "     make start		- Start the EXISTING $(NAME) container"
 	@echo "     make stop		- Stop $(NAME) container"
 	@echo "     make restart	- Stop and start $(NAME) container"
