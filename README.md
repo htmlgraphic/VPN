@@ -44,7 +44,7 @@ docker run -d -p 500:500/udp -p 4500:4500/udp -p 1701:1701/tcp -e PROXY_HOST=123
 
 **Example:**
 ```
-docker run -d -p 500:500/udp -p 4500:4500/udp -p 1701:1701/tcp htmlgraphic/vpn:0.4.0`
+docker run -d -p 500:500/udp -p 4500:4500/udp -p 1701:1701/tcp htmlgraphic/vpn:0.4.0
 ```
 
 

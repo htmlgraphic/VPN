@@ -25,7 +25,10 @@ help:
 	@echo "     make logs		- View logs in real time"
 
 build:
-	docker build --rm --no-cache -t $(IMAGE_NAME):$(TAG) .
+	docker build --rm --no-cache \
+		--build-arg VCS_REF=`git rev-parse --short HEAD` \
+		--build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
+		-t $(IMAGE_NAME):$(TAG) .
 
 push:
 	@echo "note: If the repository is set as an automated build you will NOT be able to push"

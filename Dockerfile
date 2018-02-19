@@ -43,7 +43,19 @@ ENV PROXY_HOST=$PROXY_HOST \
 	LOCAL_IP=$LOCAL_IP \
 	no_proxy=$NO_PROXY
 
-
+# Build-time metadata as defined at http://label-schema.org
+ARG BUILD_DATE
+ARG VCS_REF
+ARG VERSION
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.name="VPN Docker" \
+      org.label-schema.description="Docker container for SoftEther VPN" \
+      org.label-schema.url="https://htmlgraphic.com" \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url="https://github.com/htmlgraphic/VPN" \
+      org.label-schema.vendor="HTMLgraphic, LLC" \
+      org.label-schema.version=$VERSION \
+      org.label-schema.schema-version="1.0"
 
 WORKDIR /opt
 
